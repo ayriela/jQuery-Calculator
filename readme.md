@@ -27,16 +27,12 @@ Finally, build a 'clear' button that resets the whole experience.
 ## History:
 Keep a historical record of all math operations on the server. Display a list of all previous calculations on the page when it loads. Update the list when a new calculation is made.
 
-```
-History:
-3 * 5 = 15
-4 - 2 = 2
-4 * 3 = 12
-3 + 6 = 9
-```
+---
+Example:
 
 ![base mode interface](images/baseMode_interface.gif)
 
+---
 ## Stretch Goals:
 
 Convert the interface to look and behave like a calculator as shown below.

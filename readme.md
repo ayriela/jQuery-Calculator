@@ -4,25 +4,11 @@ You are going to be building a server-side calculator!
 
 The logic for the calculator **must** be implemented on the server. On the DOM, the user will input two values (2 input elements) and the select type of mathematical operation. The client side logic will capture this input, bundle it up in an object, and then send this object to the server via a POST.
 
-You've been given a basic starting project that includes a Calculation class:
-
-```javascript
-class Calculation{
-  constructor( xIn, yIn, operatorIn ){
-    this.x = xIn;
-    this.y = yIn;
-    this.operator = operatorIn;
-  } //end constructor
-} // end class
-```
-
-Create the user interface and appropriate event handlers that will take the user input, uses the Calculator constructor, and sends the information to the Server via a POST.
+Create the user interface and appropriate event handlers that will take the user input and sends the information to the Server via a POST.
 
 Build out the server-side logic to compute the numbers as appropriate. The server should be able to handle Addition, Subtraction, Multiplication, and Division. Once the calculation is complete, send it back to the client in an object where it should be displayed on the DOM.
 
 > NOTE: You can send an object back as a response to a POST request or follow up the POST with a GET request to retrieve the data. Using a GET request to follow up is more common at Prime and will put you in a better position working on the History feature below.
-
-Finally, build a 'clear' button that resets the whole experience.
 
 ## History:
 Keep a historical record of all math operations on the server. Display a list of all previous calculations on the page when it loads. Update the list when a new calculation is made.
@@ -31,6 +17,8 @@ Keep a historical record of all math operations on the server. Display a list of
 ![base mode interface](images/baseMode_interface.gif)
 ---
 ## Stretch Goals:
+
+- Build a 'clear' button that resets the whole experience.
 
 - Convert the interface to look and behave like a calculator as shown below.
 

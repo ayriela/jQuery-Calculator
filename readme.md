@@ -20,7 +20,6 @@ Keep a historical record of all math operations on the server. Display a list of
 ![base mode interface](images/baseMode_interface.gif)
 ---
 ## Stretch Goals
-These can be done in any order.
 
 - Convert the interface to look and behave like a calculator as shown below.
 

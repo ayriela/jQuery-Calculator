@@ -6,19 +6,22 @@ You are going to be building a server-side calculator. The logic for the calcula
 
 ## Required Features
 
-### Calculator:
+### Calculator
+
 Create a user interface where the user can input two values (2 input elements) and the select type of mathematical operation. When the submit, `=` button is clicked, capture this input, bundle it up in an object, and then send this object to the server via a POST. There should also be a 'C' button that will clear the user input fields.
 
 Build out the server-side logic to compute the numbers as appropriate. The server should be able to handle Addition, Subtraction, Multiplication, and Division. Once the calculation is complete, send it back to the client in an object where it should be displayed on the DOM.
 
-> NOTE: You can send an object back as a response to a POST request or follow up the POST with a GET request to retrieve the data. Using a GET request to follow up is more common at Prime and will put you in a better position working on the History feature below.
+### History
 
-### History:
-Keep a historical record of all math operations on the server. Display a list of all previous calculations on the page when it loads. Update the list when a new calculation is made.
+Keep a historical record of all math operations and solutions on the server. Display a list of all previous calculations on the page when it loads using a GET request. Update the list when a new calculation is made.
+
+> NOTE: History should exist even after refreshing the page. It's expected that the history will go away after restarting the server. We'll talk about long term data storage next week.
 
 ---
-![base mode interface](images/baseMode_interface.gif)
+![base mode interface](images/baseMode.png)
 ---
+
 ## Stretch Goals
 
 - Convert the interface to look and behave like a calculator as shown below.

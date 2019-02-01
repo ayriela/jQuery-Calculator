@@ -1,6 +1,6 @@
-# Weekend Challenge 2 - Server Side Calculator
+# Weekend Challenge: Server Side Calculator
 
-Welcome to the second weekend challenge!
+Welcome to the weekend challenge!
 
 You are going to be building a server-side calculator. The logic for the calculator **must** be implemented on the server. 
 

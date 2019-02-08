@@ -22,6 +22,8 @@ Keep a historical record of all math operations and solutions on the server. Dis
 ![base mode interface](images/baseMode.png)
 ---
 
+> Note: Do not use eval() to complete this assignment.
+
 ## Stretch Goals
 
 - Convert the interface to look and behave like a calculator as shown below.

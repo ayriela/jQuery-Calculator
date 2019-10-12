@@ -12,6 +12,8 @@ app.use(express.static('server/public'));
 
 //send the calculated result
 app.get('/equals', (req, res) => {
+    //console.log('in send result');
+    //console.log(result);
     res.send(result.toString());
 }); 
 
@@ -20,6 +22,7 @@ app.get('/past', (req,res)=>{
     res.send(pastOperations);
 });
 
+/*for base mode
 let operator;
 
 //get the user entered operator
@@ -27,24 +30,28 @@ app.post('/operator', (req,res)=>{
     operator=req.body.value;
     res.sendStatus(200);
 });
+*/
 
 //get the numbers and push operation object
 app.post('/equals', (req, res) => {
     let math=req.body;
+    //reset result
+    result='';
     //calculate result variable
     calculate(math);
+    //for debug 
+    //console.log(math.operator);
+    //console.log(math.num1, 'and', math.num2);
     //push the new calculation object
     pastOperations.push({
         num1: math.num1,
         num2: math.num2,
-        operator: operator,
+        //flip back to just operator in base mode
+        operator: math.operator,
         calculation: result.toString()
     })
-    //reset operator
-    operator='';
-    //reset result
-    result='';
-    console.log(result);
+    //reset operator for base mode only
+    // operator='';
     res.sendStatus(200);
 });
 
@@ -52,19 +59,20 @@ app.post('/equals', (req, res) => {
 let result;
 
 function calculate(object){
-    if (operator=='plus'){
+    //all object.operator flip to operator for base mode and uncomment operator set
+    if (object.operator=='+'){
         result=Number(object.num1) + Number(object.num2);
-        operator='+';
-    } else if (operator=='minus'){
+        //operator='+';
+    } else if (object.operator=='-'){
         result=object.num1 - object.num2;
-        operator='-';
-    } else if (operator=='multiply'){
+        //operator='-';
+    } else if (object.operator=='*'){
         result=object.num1 * object.num2;
-        operator='*';
+        //operator='*';
     } else {
         ///REMEMBER TO CATCH CASE WHERE USE HASN"T ENTERED A NEW OPERATION and clear old selection
         result=object.num1 / object.num2;
-        operator='/';
+        //operator='/';
     }
 }
 

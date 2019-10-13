@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 const bodyParser = require('body-parser');
+const Decimal = require('decimal.js');
 app.use(bodyParser.urlencoded({extended: true})); 
 
 //create array to store history
@@ -60,18 +61,25 @@ let result;
 
 function calculate(object){
     //all object.operator flip to operator for base mode and uncomment operator set
+    //also flip back to == 'plus' 'minus' and 'multiply'
+    let one = new Decimal(object.num1);
+    let two = new Decimal(object.num2);
     if (object.operator=='+'){
-        result=Number(object.num1) + Number(object.num2);
+        //result=Number(object.num1) + Number(object.num2);
+        result= one.plus(two);
         //operator='+';
     } else if (object.operator=='-'){
-        result=object.num1 - object.num2;
+        //result=object.num1 - object.num2;
+        result=one.minus(two);
         //operator='-';
     } else if (object.operator=='*'){
-        result=object.num1 * object.num2;
+        //result=object.num1 * object.num2;
+        result=one.times(two);
         //operator='*';
     } else {
         ///REMEMBER TO CATCH CASE WHERE USE HASN"T ENTERED A NEW OPERATION and clear old selection
-        result=object.num1 / object.num2;
+        //result=object.num1 / object.num2;
+        result=one.dividedBy(two);
         //operator='/';
     }
 }

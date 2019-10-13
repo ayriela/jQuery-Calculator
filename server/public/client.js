@@ -5,6 +5,7 @@ function onReady(){
     $('.mathOp').on('click', setCalcScreen);
     $('#equal').on('click', calculateResult);
     $('#clear').on('click',clearCalc);
+    getPast();
 }
 
 /* base mode only
@@ -37,25 +38,37 @@ function clearCalc(){
 //function to parse input 
 function calculateResult(){
     let current=$('#calcScreen').val();
-    //look for + - * or \ in the calcScreen 
-    let operator=current.match(/[\+|\*|\-|\/]/);
-    //console.log(operator);
-    //grab value before and after operator is found
-    let num1=current.substring(0,operator.index);
-    let num2=current.substring(operator.index+1,current.length+1);
-    //pass values to server
-    $.ajax({
-        type: 'POST',
-        url: '/equals',
-        data: {
-           num1: num1,
-           num2: num2,
-           operator: operator
-        }
-    }).then(function () {
+    //look for all + - * or \ in the calcScreen (this no longer returns index)
+    let operator=current.match(/[\+|\*|\-|\/]/g);
+    //console.log(operator.index);
+    if ( operator === null){
+        //check for case where no operation selected
+        alert('There is no operation to perform! Please use +, -, *, or /');
+    } else if (operator.length > 1){
+        //check for two or more operations
+        alert('There is more than one mathematic operation applied. Please submit operations one at a time!')
+    } else{
+        //grab the single operator value and position
+        operator=current.match(/[\+|\*|\-|\/]/);
+        //grab value before and after operator is found
+        let num1=current.substring(0,operator.index);
+        let num2=current.substring(operator.index+1,current.length+1);
+        //console.log(num1);
+        //console.log(num2);
+        //pass values to server
+        $.ajax({
+            type: 'POST',
+            url: '/equals',
+            data: {
+                num1: num1,
+                num2: num2,
+                operator: operator
+            }
+        }).then(function () {
         getResult();
         getPast();
-    });
+        });
+    }
 }
 
 /*base mode function

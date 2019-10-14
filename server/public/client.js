@@ -46,6 +46,7 @@ function calculateResult(){
         alert('There is no operation to perform! Please use +, -, *, or /');
     } else if (operator.length > 1){
         //check for two or more operations
+        //this will forbid using negative numbers however...
         alert('There is more than one mathematic operation applied. Please submit operations one at a time!')
     } else{
         //grab the single operator value and position

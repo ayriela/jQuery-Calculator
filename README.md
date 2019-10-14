@@ -1,7 +1,7 @@
 # jQuery Calculator
-![REPO SIZE](https://img.shields.io/github/repo-size/ayriela/jquery-server-side-calculator.svg?style=flat-square)
-![TOP_LANGUAGE](https://img.shields.io/github/languages/top/ayriela/jquery-server-side-calculator.svg?style=flat-square)
-![FORKS](https://img.shields.io/github/forks/ayriela/jquery-server-side-calculator.svg?style=social)
+![REPO SIZE](https://img.shields.io/github/repo-size/ayriela/jquery-server-side-calculator-public.svg?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/ayriela/jquery-server-side-calculator-public.svg?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/ayriela/jquery-server-side-calculator-public.svg?style=social)
 
 
 ## Description

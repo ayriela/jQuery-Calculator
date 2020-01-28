@@ -9,6 +9,8 @@ Duration: Weekend Project
 
 This jQuery Caluclator allows users to complete basic arithmetic operations and records the results of past calculations. 
 
+- [Link to Deployed App](https://simple-jquery-calculator.herokuapp.com)
+
 ## Screen Shot
 ![Screen Shot](calculator.png)
 
